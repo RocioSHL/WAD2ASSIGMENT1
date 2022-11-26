@@ -15,12 +15,12 @@ import IconButton from "@mui/material/IconButton";
 import Grid from "@mui/material/Grid";
 import img from '../../images/film-poster-placeholder.png'
 import { MoviesContext } from "../../contexts/moviesContext";
-export default function ActorCard({actor,action}){
+export default function ActorCard({movie,action}){
 return (
     <Card sx={{ maxWidth: 345 }}>
     <CardHeader
         avatar={
-         actor.favourite ? (
+        movie.favourite ? (
             <Avatar sx={{ backgroundColor: 'red' }}>
               <FavoriteIcon />
             </Avatar>
@@ -35,7 +35,7 @@ return (
       <CardMedia
         sx={{ height: 500 }}
         image={
-          actor.poster_path
+          movie.poster_path
             ? `https://image.tmdb.org/t/p/w500/${movie.poster_path}`
             : img
         }
