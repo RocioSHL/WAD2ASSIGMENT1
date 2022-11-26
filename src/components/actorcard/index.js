@@ -11,32 +11,27 @@ import Typography from "@mui/material/Typography";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import CalendarIcon from "@mui/icons-material/CalendarTodayTwoTone";
 import StarRateIcon from "@mui/icons-material/StarRate";
-import IconButton from "@mui/material/IconButton";
+
 import Grid from "@mui/material/Grid";
 import img from '../../images/film-poster-placeholder.png'
-import { MoviesContext } from "../../contexts/moviesContext";
-export default function ActorCard({movie,action}){
+
+export default function ActorCard({actor,action}){
 return (
     <Card sx={{ maxWidth: 345 }}>
     <CardHeader
-        avatar={
-        movie.favourite ? (
-            <Avatar sx={{ backgroundColor: 'red' }}>
-              <FavoriteIcon />
-            </Avatar>
-          ) : null
-        }
+       
+    
         title={
           <Typography variant="h5" component="p">
-            {movie.title}{" "}
+            {actor.name}{" "}
           </Typography>
         }
       />
       <CardMedia
         sx={{ height: 500 }}
         image={
-          movie.poster_path
-            ? `https://image.tmdb.org/t/p/w500/${movie.poster_path}`
+          actor.profile_path
+            ? `https://image.tmdb.org/t/p/w500/${actor.profile_path}`
             : img
         }
       />
@@ -45,22 +40,22 @@ return (
           <Grid item xs={6}>
             <Typography variant="h6" component="p">
               <CalendarIcon fontSize="small" />
-              {movie.release_date}
+              {actor.birthday}
             </Typography>
           </Grid>
           <Grid item xs={6}>
             <Typography variant="h6" component="p">
               <StarRateIcon fontSize="small" />
-              {"  "} {movie.vote_average}{" "}
+              {"  "} {actor.popularity}{" "}
             </Typography>
           </Grid>
         </Grid>
       </CardContent>
       <CardActions disableSpacing>
-    {action(movie)}
-    <Link to={`/movies/${movie.id}`}>
+    
+    <Link to={`/movies/${actor.id}`}>
       <Button variant="outlined" size="medium" color="primary">
-        More Info ...
+        More Info ... not yet 
       </Button>
     </Link>
   </CardActions>
