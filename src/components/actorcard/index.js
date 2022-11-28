@@ -11,15 +11,30 @@ import Typography from "@mui/material/Typography";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import CalendarIcon from "@mui/icons-material/CalendarTodayTwoTone";
 import StarRateIcon from "@mui/icons-material/StarRate";
-
+import { MoviesContext } from "../../contexts/moviesContext";
 import Grid from "@mui/material/Grid";
 import img from '../../images/film-poster-placeholder.png'
 
 export default function ActorCard({actor,action}){
+ 
+  const {favourites , addToFavorites}=useContext(MoviesContext);
+
+  if (favourites.find((id) => id === actor.id)) {
+   actor.favourite = true;
+  } else {
+    actor.favourite = false
+  }
 return (
     <Card sx={{ maxWidth: 345 }}>
     <CardHeader
        
+       avatar={
+        actor.favourite ? (
+           <Avatar sx={{ backgroundColor: 'red' }}>
+             <FavoriteIcon />
+           </Avatar>
+         ) : null
+       }
     
         title={
           <Typography variant="h5" component="p">
@@ -52,7 +67,7 @@ return (
         </Grid>
       </CardContent>
       <CardActions disableSpacing>
-    
+    {action(actor)}
     <Link to={`/movies/${actor.id}`}>
       <Button variant="outlined" size="medium" color="primary">
         More Info ... not yet 

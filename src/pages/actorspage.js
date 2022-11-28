@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ActorListPageTemplate from "../components/templateactorlist";
 import {getActors } from "../api/tmdb-api";
-
+import AddToFavouritesIcon from "../components/cardIcons/addToFavourites";
 import { useQuery } from 'react-query';
 import Spinner from '../components/spinner';
 const ActorsPage = (props) => {
@@ -24,6 +24,13 @@ const ActorsPage = (props) => {
     <ActorListPageTemplate
       title="ACTORS"
       actors={actor}
+      action= {(actor) => {
+        return (
+        <>
+        <AddToFavouritesIcon movie={actor} />
+        
+        </>)
+      }}
       
     />
   );
