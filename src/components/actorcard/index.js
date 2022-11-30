@@ -68,9 +68,9 @@ return (
       </CardContent>
       <CardActions disableSpacing>
     {action(actor)}
-    <Link to={`/movies/${actor.id}`}>
+    <Link to={`/actors/${actor.id}`}>
       <Button variant="outlined" size="medium" color="primary">
-        More Info ... not yet 
+        More Info ...
       </Button>
     </Link>
   </CardActions>
