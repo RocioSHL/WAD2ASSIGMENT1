@@ -8,7 +8,7 @@ import CardMedia from "@mui/material/CardMedia";
 import CardHeader from "@mui/material/CardHeader";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-
+import { LiveTv } from "@mui/icons-material";
 import CalendarIcon from "@mui/icons-material/CalendarTodayTwoTone";
 import StarRateIcon from "@mui/icons-material/StarRate";
 
@@ -23,6 +23,7 @@ export default function TvseriesCard({tvseries,action}){
             title={
               <Typography variant="h5" component="p">
                 {tvseries.name}{" "}
+                <LiveTv></LiveTv>
               </Typography>
             }
           />

@@ -11,6 +11,8 @@ import { useNavigate } from "react-router-dom";
 import { styled } from '@mui/material/styles';
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
+import { Icon } from "@mui/material";
+import { Movie } from "@mui/icons-material";
 
 const Offset = styled('div')(({ theme }) => theme.mixins.toolbar);
 
@@ -24,7 +26,7 @@ const SiteHeader = ({ history }) => {
   const navigate = useNavigate();
 
   const menuOptions = [
-    { label: "Home", path: "/" },
+    { label: "Home", path: "/"  },
     { label: "Upcoming", path: "/movies/upcoming" },
     { label: "Favourites", path: "/movies/favourites" },
     { label: "Popular", path: "/movies/Popular" },
@@ -49,7 +51,9 @@ const SiteHeader = ({ history }) => {
             TMDB Client
           </Typography>
           <Typography variant="h6" sx={{ flexGrow: 1 }}>
+          <Movie></Movie>
             All you ever wanted to know about Movies!
+            <Movie></Movie>
           </Typography>
             {isMobile ? (
               <>
@@ -81,9 +85,12 @@ const SiteHeader = ({ history }) => {
                     <MenuItem
                       key={opt.label}
                       onClick={() => handleMenuSelect(opt.path)}
-                    >
+                      
+                   >
                       {opt.label}
+                    
                     </MenuItem>
+                    
                   ))}
                 </Menu>
               </>

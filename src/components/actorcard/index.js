@@ -9,6 +9,7 @@ import CardHeader from "@mui/material/CardHeader";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import FavoriteIcon from "@mui/icons-material/Favorite";
+import { AccountBox } from "@mui/icons-material";
 import CalendarIcon from "@mui/icons-material/CalendarTodayTwoTone";
 import StarRateIcon from "@mui/icons-material/StarRate";
 import { MoviesContext } from "../../contexts/moviesContext";
@@ -39,7 +40,9 @@ return (
         title={
           <Typography variant="h5" component="p">
             {actor.name}{" "}
+            <AccountBox color="blue" ></AccountBox>
           </Typography>
+         
         }
       />
       <CardMedia
@@ -70,7 +73,7 @@ return (
     {action(actor)}
     <Link to={`/actors/${actor.id}`}>
       <Button variant="outlined" size="medium" color="primary">
-        More Info ...
+        Biography 
       </Button>
     </Link>
   </CardActions>

@@ -2,7 +2,6 @@ import React, { useState} from "react";
 import Chip from "@mui/material/Chip";
 import Paper from "@mui/material/Paper";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
-import MonetizationIcon from "@mui/icons-material/MonetizationOn";
 import StarRate from "@mui/icons-material/StarRate";
 import NavigationIcon from "@mui/icons-material/Navigation";
 import Fab from "@mui/material/Fab";
@@ -43,15 +42,12 @@ const ActorDetails = ({ actor }) => {
       </Paper>
       <Paper component="ul" sx={root}>
         <Chip icon={<AccessTimeIcon />} label={`Borned ${actor.birthday} `} />
-        <Chip
-          icon={<MonetizationIcon />}
-          
-        />
+        
         <Chip
           icon={<StarRate />}
           label={`${actor.popularity}`}
         />
-        <Chip label={`aka: ${actor.also_known_as}`} />
+        <Chip label={`also known as: ${actor.also_known_as}`} />
       </Paper>
       <Paper 
         component="ul" 

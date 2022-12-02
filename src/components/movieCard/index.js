@@ -15,6 +15,7 @@ import IconButton from "@mui/material/IconButton";
 import Grid from "@mui/material/Grid";
 import img from '../../images/film-poster-placeholder.png'
 import { MoviesContext } from "../../contexts/moviesContext";
+import { Movie } from "@mui/icons-material";
 
 export default function MovieCard({ movie, action }) {
   const { favourites, addToFavourites } = useContext(MoviesContext);
@@ -44,6 +45,7 @@ export default function MovieCard({ movie, action }) {
         title={
           <Typography variant="h5" component="p">
             {movie.title}{" "}
+            <Movie></Movie>
           </Typography>
         }
       />
